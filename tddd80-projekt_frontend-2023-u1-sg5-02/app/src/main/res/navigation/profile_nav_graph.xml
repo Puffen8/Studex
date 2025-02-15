@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_nav_graph"
+    app:startDestination="@id/noDisplay">
+    <fragment
+        android:id="@+id/noDisplay"
+        android:name="com.example.studex.fragments.NoDisplayFragment"
+        android:label="fragment_no_display"
+        tools:layout="@layout/fragment_no_display" >
+        <action
+            android:id="@+id/action_noDisplay_to_listingsFragment"
+            app:destination="@id/listingsFragment" />
+        <action
+            android:id="@+id/action_noDisplay_to_credentialsFragment"
+            app:destination="@id/credentialsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listingsFragment"
+        android:name="com.example.studex.fragments.ListingsFragment"
+        android:label="fragment_listings"
+        tools:layout="@layout/fragment_listings" >
+        <action
+            android:id="@+id/action_listingsFragment_to_credentialsFragment"
+            app:destination="@id/credentialsFragment" />
+        <action
+            android:id="@+id/action_listingsFragment_self"
+            app:destination="@id/listingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/credentialsFragment"
+        android:name="com.example.studex.fragments.CredentialsFragment"
+        android:label="CredentialsFragment" >
+        <action
+            android:id="@+id/action_credentialsFragment_to_listingsFragment"
+            app:destination="@id/listingsFragment" />
+    </fragment>
+</navigation>

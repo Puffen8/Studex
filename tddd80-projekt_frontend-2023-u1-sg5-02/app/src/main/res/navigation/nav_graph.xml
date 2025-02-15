@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.studex.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_listingFragment2"
+            app:destination="@id/listingFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.studex.fragments.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_listingFragment"
+            app:destination="@id/listingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.example.studex.fragments.ChatsFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chats" >
+        <action
+            android:id="@+id/action_chatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newListingFragment"
+        android:name="com.example.studex.fragments.NewListingFragment"
+        android:label="New Listing"
+        tools:layout="@layout/fragment_new_listing" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.studex.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_listingFragment"
+            app:destination="@id/listingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.studex.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.studex.fragments.RegistrationFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listingFragment"
+        android:name="com.example.studex.fragments.ListingFragment"
+        android:label="Listing"
+        tools:layout="@layout/fragment_listing" >
+        <action
+            android:id="@+id/action_listingFragment_to_editListingFragment"
+            app:destination="@id/editListingFragment"
+            app:popUpTo="@+id/listingFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_listingFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <argument
+            android:name="ListingData"
+            app:argType="com.example.studex.ListingData" />
+    </fragment>
+    <fragment
+        android:id="@+id/editListingFragment"
+        android:name="com.example.studex.fragments.EditListingFragment"
+        android:label="Edit Listing" >
+        <action
+            android:id="@+id/action_editListingFragment_to_listingFragment"
+            app:destination="@id/listingFragment"
+            app:popUpTo="@+id/editListingFragment"
+            app:popUpToInclusive="true"/>
+
+        <argument
+            android:name="listingData"
+            app:argType="com.example.studex.ListingData" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.studex.fragments.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_to_listingFragment"
+            app:destination="@id/listingFragment" />
+        <argument
+            android:name="ChatData"
+            app:argType="com.example.studex.ChatData" />
+    </fragment>
+
+</navigation>

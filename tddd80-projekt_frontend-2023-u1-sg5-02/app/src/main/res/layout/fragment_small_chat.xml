@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    tools:context=".fragments.SmallChatFragment"
+    android:background="@android:drawable/editbox_background" >
+
+    <ImageView
+        android:id="@+id/small_listing_image_chat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_no_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/preview_user_text"
+        android:layout_width="180dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:text="User"
+        app:layout_constraintStart_toEndOf="@+id/small_listing_image_chat"
+        app:layout_constraintTop_toBottomOf="@+id/preview_listing_title_text" />
+
+    <TextView
+        android:id="@+id/preview_listing_title_text"
+        android:layout_width="180dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Listing Title"
+        app:layout_constraintStart_toEndOf="@+id/small_listing_image_chat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chat_last_message_time"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:gravity="end"
+        android:text="Time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/preview_user_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/last_message"
+        android:layout_width="180dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:text="Last message"
+        app:layout_constraintStart_toEndOf="@+id/small_listing_image_chat"
+        app:layout_constraintTop_toBottomOf="@+id/preview_user_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>
